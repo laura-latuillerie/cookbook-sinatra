@@ -11,19 +11,20 @@
     </tr>
   </thead>
   <tbody>
-  <% @recipes.each do |recipe| %>
+  <% @recipes.each_with_index do |recipe, index| %>
     <tr>
-      <th scope="row">1</th>
+      <td><%= index + 1 %></td>
       <td><%= recipe.done == 'true' ? '✅' : '◻️' %></td>
       <td><%= recipe.name %></td>
       <td><%= recipe.description %></td>
       <td><%= recipe.preptime %></td>
       <td><%= recipe.rating %></td>
+      <td><a href = "recipes/<%=index%>/delete" class = "btn btn-danger">Delete</a></td>
     </tr>
   <% end %>
   </tbody>
 </table>
 </div>
 <div class = "text-center mt-5">
-<a href = "/new" class = "btn btn-purple">Create</a>
+<a href = "/new" class = "btn btn-primary">Create</a>
 </div>

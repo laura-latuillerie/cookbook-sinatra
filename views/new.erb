@@ -3,20 +3,21 @@
   <h2 class = "text-center">Create your recipe</h2>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="recipe_name" placeholder="Ex: Mango Sticky Rice">
+    <input type="text" class="form-control" name="name" placeholder="Ex: Mango Sticky Rice">
   </div>
   <div class="mb-3">
     <label for="description" class="form-label">Description</label>
-    <textarea class="form-control" id="recipe_description" rows="3" placeholder="Ex: Fresh diced mangos with coconut milk and rice. Refreshing desert classic for summer cravings made in Thailand."></textarea>
+    <textarea class="form-control" name="description" rows="3" placeholder="Ex: Fresh diced mangos with coconut milk and rice. Refreshing desert classic for summer cravings made in Thailand."></textarea>
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text">Preptime</span>
-    <input type="text" class="form-control" placeholder="Ex: 15 min" aria-label="preparation_time">
+    <input type="text" class="form-control" placeholder="Ex: 15 min" aria-label="preparation_time" name="preptime" >
     <span class="input-group-text">Rating</span>
-    <input type="text" class="form-control" placeholder="Ex : 4.5" aria-label="rating">
+    <input type="text" class="form-control" placeholder="Ex : 4.5" aria-label="rating" name="rating">
   </div>
-</form>
-<div class = "text-center mt-5">
-  <input type="submit" class = "btn btn-purple" value="Submit">
+  <div class = "text-center mt-5">
+  <input type="submit" class = "btn btn-primary" value="Submit">
+  <a href = "/" class = "btn btn-light">Back</a>
 </div>
+</form>
 </div>

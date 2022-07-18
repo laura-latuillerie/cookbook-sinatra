@@ -6,14 +6,17 @@ require_relative "cookbook"
 require_relative "recipe"
 require_relative "parsing"
 
+
 configure :development do
   use BetterErrors::Middleware
   BetterErrors.application_root = File.expand_path('..', __FILE__)
 end
 
+csv_file = File.join(__dir__, 'recipes.csv')
+COOKBOOK = Cookbook.new(csv_file)
+
 get "/" do
-  @cookbook = Cookbook.new('recipes.csv')
-  @recipes = @cookbook.all
+  @recipes = COOKBOOK.all
   erb :index
 end
 
@@ -22,8 +25,14 @@ get "/new" do
 end
 
 post '/recipes' do
-  
-  @cookbook.add(recipe)
+  new_recipe = Recipe.new(params[:name], params[:description], params[:preptime], "#{params[:rating]} / 5")
+  COOKBOOK.add_recipe(new_recipe)
+  redirect '/'
+end
+
+get '/recipes/:index/delete' do
+  COOKBOOK.remove_recipe(params[:index].to_i)
+  redirect '/'
 end
 
 get '/layout' do
@@ -32,9 +41,4 @@ end
 
 get "/about" do
   erb :about
-end
-
-get "/team/:username" do
-  puts params[:username]
-  "The username is #{params[:username]}"
 end
