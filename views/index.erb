@@ -1,0 +1,29 @@
+<div>
+<table class = "table text-start">
+  <thead>
+    <tr class="color-purple">
+      <th scope="col">#</th>
+      <th scope="col">Status</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Prep time</th>
+      <th scope="col">Ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= recipe.done == 'true' ? '✅' : '◻️' %></td>
+      <td><%= recipe.name %></td>
+      <td><%= recipe.description %></td>
+      <td><%= recipe.preptime %></td>
+      <td><%= recipe.rating %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+<div class = "text-center mt-5">
+<a href = "/new" class = "btn btn-purple">Create</a>
+</div>

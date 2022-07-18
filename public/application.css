@@ -1,0 +1,24 @@
+body {
+  background-color: mediumslateblue;
+}
+
+.color-purple{
+  color: mediumslateblue;
+}
+
+.btn-purple{
+  background-color: mediumslateblue;
+}
+
+.centered{
+  width: 100;
+  margin: auto;
+}
+
+.full-h{
+  height: 100vh;
+}
+
+.shadowed{
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.092);
+}
